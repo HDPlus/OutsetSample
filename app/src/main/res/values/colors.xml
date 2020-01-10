@@ -6,8 +6,11 @@
     
     <color name="colorRed">#BB141A</color>
     <color name="colorGreen">#4D9D4C</color>
+    <color name="colorLightGreen">#3DC300</color>
     <color name="colorOrange">#F46835</color>
     <color name="colorGray">#B4BDBC</color>
     <color name="colorDark">#443f3f</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlue">#00a1cd</color>
+    <color name="transparent">@android:color/transparent</color>
 </resources>

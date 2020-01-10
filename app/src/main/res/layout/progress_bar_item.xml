@@ -33,6 +33,20 @@
 
     </LinearLayout>
 
+    <SeekBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/progress_bar_background"
+        android:indeterminate="false"
+        android:max="1800"
+        android:paddingStart="0dp"
+        android:paddingEnd="0dp"
+        android:progress="600"
+        android:progressDrawable="@drawable/progress_bar_drawable"
+        android:splitTrack="false"
+        android:thumb="@null" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
