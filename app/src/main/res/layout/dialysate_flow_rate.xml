@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightBLue"
+    android:gravity="fill_vertical"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <include
+        android:id="@+id/venous_pressure"
+        layout="@layout/progress_bar_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/arterial_pressure"
+        layout="@layout/progress_bar_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/venous_pressure"
+        tools:layout_marginTop="15dp" />
+
+    <include
+        android:id="@+id/tmp"
+        layout="@layout/parameter_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/arterial_pressure"
+        tools:layout_marginTop="65dp" />
+
+    <include
+        android:id="@+id/uf_rate"
+        layout="@layout/parameter_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="15dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

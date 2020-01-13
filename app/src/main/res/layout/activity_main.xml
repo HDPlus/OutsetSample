@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +27,7 @@
             android:textSize="32sp" />
     </LinearLayout>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -38,7 +39,9 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:scaleType="fitStart"
-            android:src="@drawable/tab_overlay" />
+            android:src="@drawable/tab_overlay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/clock"
@@ -49,9 +52,20 @@
             android:layout_marginEnd="50dp"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Sun 9:30am" />
 
-    </FrameLayout>
+        <include
+            layout="@layout/main_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/clock" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/stop_treatment_btn"
