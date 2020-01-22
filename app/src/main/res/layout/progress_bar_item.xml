@@ -1,73 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="minRange"
+            type="int" />
+
+        <variable
+            name="maxRange"
+            type="int" />
+
+        <variable
+            name="progress"
+            type="int" />
+
+        <variable
+            name="measure"
+            type="String" />
+
+        <variable
+            name="progressDrawable"
+            type="java.lang.ref.Reference" />
+
+        <variable
+            name="parameterName"
+            type="String" />
+        <variable
+            name="progressThumb"
+            type="android.graphics.drawable.Drawable" />
+
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/parameter_name"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            tools:text="Fluid removed" />
+            android:orientation="horizontal"
+            android:weightSum="3">
 
-        <TextView
-            android:id="@+id/parameter_value"
-            android:layout_width="0dp"
+            <TextView
+                android:id="@+id/parameter_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@{parameterName}"
+                tools:text="Fluid removed" />
+
+            <TextView
+                android:id="@+id/parameter_value"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@{progress}"
+                android:textColor="@color/colorGreen"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                tools:text="600" />
+
+        </LinearLayout>
+
+        <SeekBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:textColor="@color/colorGreen"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            tools:text="600" />
+            android:background="@drawable/progress_bar_background"
+            android:indeterminate="false"
+            android:max="@{maxRange}"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:progress="@{progress}"
+            android:splitTrack="false"
+            android:thumb="@{progressThumb}"
+            app:customProgress="@{progressDrawable}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/min_possible"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{minRange}"
+                android:textColor="@color/colorGray"
+                tools:text="-199" />
+
+            <TextView
+                android:id="@+id/max_possible"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@{maxRange + ` ` + measure}"
+                android:textColor="@color/colorGray"
+                tools:text="1800 mL" />
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <SeekBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/progress_bar_background"
-        android:indeterminate="false"
-        android:max="1800"
-        android:paddingStart="0dp"
-        android:paddingEnd="0dp"
-        android:progress="600"
-        android:progressDrawable="@drawable/progress_bar_drawable"
-        android:splitTrack="false"
-        android:thumb="@null" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/min_possible"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/colorGray"
-            tools:text="-199" />
-
-        <TextView
-            android:id="@+id/max_possible"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:textColor="@color/colorGray"
-
-            tools:text="1800mL" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</layout>

@@ -1,7 +1,8 @@
-package com.dsmishniy.outsetsample
+package com.dsmishniy.outsetsample.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.dsmishniy.outsetsample.R
 
 class MainActivity : AppCompatActivity() {
 
