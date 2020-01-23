@@ -68,23 +68,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <LinearLayout
+    <Button
         android:id="@+id/stop_treatment_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorRed"
+        android:background="@drawable/stop_treatment_btn_background"
         android:gravity="center"
+        android:text="@string/stop_btn"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp"
+        android:textAllCaps="false"
         android:orientation="horizontal"
         android:paddingTop="18dp"
         android:paddingBottom="18dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/stop_btn"
-            android:textColor="@android:color/white"
-            android:textSize="32sp" />
-
-    </LinearLayout>
+    </Button>
 
 </LinearLayout>
