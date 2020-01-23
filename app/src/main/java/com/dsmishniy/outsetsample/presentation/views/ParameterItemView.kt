@@ -1,7 +1,6 @@
 package com.dsmishniy.outsetsample.presentation.views
 
 import android.content.Context
-import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.View
 import android.widget.LinearLayout
@@ -10,15 +9,13 @@ import kotlinx.android.synthetic.main.parameter_item.view.*
 
 class ParameterItemView(context: Context, attrs: AttributeSet) : LinearLayout(context, attrs) {
 
-    private lateinit var typedArray: TypedArray
-
     init {
         init(context, attrs)
     }
 
     private fun init(context: Context, attrs: AttributeSet) {
         View.inflate(context, R.layout.parameter_item, this)
-        typedArray = context
+        val typedArray = context
             .theme
             .obtainStyledAttributes(attrs, R.styleable.ParameterItemView, 0, 0)
         try {

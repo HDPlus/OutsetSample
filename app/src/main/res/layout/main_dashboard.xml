@@ -75,10 +75,12 @@
                 app:progressThumb="@null"
                 app:progressValueColor="@color/colorGreen" />
 
-            <include
+            <com.dsmishniy.outsetsample.presentation.views.OperationItemView
                 android:id="@+id/saline_bolus_btn"
-                layout="@layout/operation_btn_item"
                 android:layout_width="wrap_content"
+                app:buttonImageSrc="@drawable/ic_saline_bolus"
+                app:operationName="@string/saline_btn"
+                app:operationNameColor="@color/colorBlue"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toStartOf="@+id/fluid_removal_btn"
@@ -86,12 +88,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar" />
 
-            <include
+            <com.dsmishniy.outsetsample.presentation.views.OperationItemView
                 android:id="@+id/fluid_removal_btn"
-                layout="@layout/operation_btn_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                app:buttonImageSrc="@drawable/ic_fluid_removal_stop"
+                app:operationName="@string/fluid_rem_btn"
+                app:operationNameColor="@color/colorBlue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/saline_bolus_btn"

@@ -2,4 +2,6 @@
     <string name="app_name">Outset Sample</string>
     <string name="stop_btn">Stop Treatment</string>
     <string name="user_name">Tommy</string>
+    <string name="saline_btn">100 mL \n saline bolus</string>
+    <string name="fluid_rem_btn">Stop fluid \n removal</string>
 </resources>
