@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -44,11 +44,12 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:progress="600"
-        android:progressDrawable="@drawable/progress_bar_drawable"
+        tools:progressDrawable="@drawable/progress_bar_drawable"
         android:splitTrack="false"
         android:thumb="@null" />
 
     <LinearLayout
+        android:id="@+id/bottom_titles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -69,8 +70,8 @@
             android:gravity="end"
             android:textColor="@color/colorGray"
 
-            tools:text="1800mL" />
+            tools:text="1800 mL" />
 
     </LinearLayout>
 
-</merge>
+</LinearLayout>

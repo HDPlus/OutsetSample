@@ -14,6 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
+        app:maxRange="300"
+        app:measurement="mmHg"
+        app:minRange="0"
+        app:parameterName="Venous pressure"
+        app:progress="150"
+        app:progressDrawable="@color/transparent"
+        app:progressThumb="@drawable/ic_blue_pointer"
+        app:progressValueColor="@color/colorBlue"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.dsmishniy.outsetsample.presentation.views.CustomProgressBar
@@ -21,6 +29,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/venous_pressure"
+        app:maxRange="0"
+        app:measurement="mmHg"
+        app:minRange="-300"
+        app:parameterName="Arterial pressure"
+        app:progress="-40"
+        app:progressDrawable="@color/transparent"
+        app:progressThumb="@drawable/ic_red_pointer"
+        app:progressValueColor="@color/colorRed"
         android:layout_marginTop="15dp" />
 
     <include

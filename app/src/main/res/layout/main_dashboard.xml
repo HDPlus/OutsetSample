@@ -60,12 +60,20 @@
             android:background="@color/colorLightBLue"
             android:paddingBottom="15dp">
 
-            <include
+            <com.dsmishniy.outsetsample.presentation.views.CustomProgressBar
                 android:id="@+id/fluid_remove_progressbar"
-                layout="@layout/progress_bar_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp" />
+                android:layout_margin="15dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:maxRange="1800"
+                app:measurement="ml"
+                app:minRange="-199"
+                app:parameterName="Fluid removed"
+                app:progress="600"
+                app:progressDrawable="@drawable/progress_bar_drawable"
+                app:progressThumb="@null"
+                app:progressValueColor="@color/colorGreen" />
 
             <include
                 android:id="@+id/saline_bolus_btn"

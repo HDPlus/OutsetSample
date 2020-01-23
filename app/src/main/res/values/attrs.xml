@@ -4,10 +4,10 @@
         <attr name="minRange" format="integer" />
         <attr name="maxRange" format="integer" />
         <attr name="progress" format="integer" />
-        <attr name="measure" format="string" />
+        <attr name="measurement" format="string" />
         <attr name="progressDrawable" format="reference" />
         <attr name="parameterName" format="string" />
         <attr name="progressThumb" format="reference" />
-        <attr name="parameterNameColor" format="reference"/>
+        <attr name="progressValueColor" format="color"/>
     </declare-styleable>
 </resources>
