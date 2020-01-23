@@ -8,6 +8,16 @@
         <attr name="progressDrawable" format="reference" />
         <attr name="parameterName" format="string" />
         <attr name="progressThumb" format="reference" />
-        <attr name="progressValueColor" format="color"/>
+        <attr name="progressValueColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ParameterItemView">
+        <attr name="itemBackground" format="color" />
+        <attr name="parameterNameSize" format="dimension" />
+        <attr name="parameterValueSize" format="dimension" />
+        <attr name="parameterItemName" format="string" />
+        <attr name="parameterValue" format="string" />
+        <attr name="parameterMeasurement" format="string" />
+        <attr name="parameterNameDrawableEnd" format="reference"/>
     </declare-styleable>
 </resources>

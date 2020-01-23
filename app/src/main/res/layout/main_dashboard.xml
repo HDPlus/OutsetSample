@@ -97,14 +97,16 @@
                 app:layout_constraintStart_toEndOf="@+id/saline_bolus_btn"
                 app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar" />
 
-            <include
+            <com.dsmishniy.outsetsample.presentation.views.ParameterItemView
                 android:id="@+id/saline_status"
-                layout="@layout/parameter_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
+                app:parameterItemName="Total Saline Bolus Given"
+                app:parameterMeasurement="mL/Hour"
+                app:parameterValue="1000"
                 app:layout_constraintTop_toBottomOf="@+id/saline_bolus_btn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
