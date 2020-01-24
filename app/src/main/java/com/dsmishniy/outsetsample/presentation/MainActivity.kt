@@ -7,6 +7,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dsmishniy.outsetsample.R
 import com.dsmishniy.outsetsample.domain.viewmodels.MainActivityViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,10 +27,13 @@ class MainActivity : AppCompatActivity(), ViewModelStoreOwner {
             ViewModelProvider.AndroidViewModelFactory(application)
         )[MainActivityViewModel::class.java]
 
-        model.getTime()
-        model.time.observe(this, Observer {
-            clock.text = it
-        })
+        getTime()
+        startCountDown()
+
+        val infoItemsAdapter = InfoItemsAdapter()
+        infoItemsAdapter.addItems(model.getInfoItems())
+        info_items.layoutManager = LinearLayoutManager(this)
+        info_items.adapter = infoItemsAdapter
 
         switch_cards_btn.setOnClickListener {
             if (info_card.isVisible && info_items.isVisible) {
@@ -46,8 +50,14 @@ class MainActivity : AppCompatActivity(), ViewModelStoreOwner {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
+    private fun getTime() {
+        model.getTime()
+        model.time.observe(this, Observer {
+            clock.text = it
+        })
+    }
+
+    private fun startCountDown() {
         model.startCountDown(COUNT_DOWN_START_TIME, 1000)
         model.countDownText.observe(this, Observer {
             timer.text = it

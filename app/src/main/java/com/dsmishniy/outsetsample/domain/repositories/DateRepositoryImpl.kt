@@ -1,6 +1,6 @@
-package com.dsmishniy.outsetsample.domain
+package com.dsmishniy.outsetsample.domain.repositories
 
-import com.dsmishniy.outsetsample.data.DateRepository
+import com.dsmishniy.outsetsample.data.repositories.DateRepository
 import java.text.SimpleDateFormat
 import java.util.*
 

@@ -3,8 +3,10 @@ package com.dsmishniy.outsetsample.domain.viewmodels
 import android.os.CountDownTimer
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.dsmishniy.outsetsample.data.DateRepository
-import com.dsmishniy.outsetsample.domain.DateRepositoryImpl
+import com.dsmishniy.outsetsample.data.repositories.DateRepository
+import com.dsmishniy.outsetsample.data.repositories.ParameterItemRepository
+import com.dsmishniy.outsetsample.domain.repositories.DateRepositoryImpl
+import com.dsmishniy.outsetsample.domain.repositories.ParameterItemRepoImpl
 import java.util.*
 import kotlin.concurrent.fixedRateTimer
 
@@ -16,6 +18,7 @@ class MainActivityViewModel : ViewModel() {
 
     private lateinit var timer: Timer
     private val dateRepository: DateRepository = DateRepositoryImpl()
+    private val parameterItemRepository: ParameterItemRepository = ParameterItemRepoImpl()
 
     fun getTime() {
         timer = fixedRateTimer(period = 1000) {
@@ -40,6 +43,8 @@ class MainActivityViewModel : ViewModel() {
         }
         countDown.start()
     }
+
+    fun getInfoItems() = parameterItemRepository.getParameterItems()
 
     fun disableTimer() {
         timer.cancel()
