@@ -33,24 +33,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total time remaining"
-                app:layout_constraintBottom_toTopOf="@+id/clock"
+                app:layout_constraintBottom_toTopOf="@+id/timer"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/switch_cards_btn"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/clock"
+                android:id="@+id/timer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:includeFontPadding="false"
                 android:textColor="@color/colorBlue"
                 android:textSize="56sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/switch_cards_btn"
-                tools:text="6:00" />
+                tools:text="6:00"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -78,15 +77,15 @@
             <com.dsmishniy.outsetsample.presentation.views.OperationItemView
                 android:id="@+id/saline_bolus_btn"
                 android:layout_width="wrap_content"
-                app:buttonImageSrc="@drawable/ic_saline_bolus"
-                app:operationName="@string/saline_btn"
-                app:operationNameColor="@color/colorBlue"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                app:buttonImageSrc="@drawable/ic_saline_bolus"
                 app:layout_constraintEnd_toStartOf="@+id/fluid_removal_btn"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar" />
+                app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar"
+                app:operationName="@string/saline_btn"
+                app:operationNameColor="@color/colorBlue" />
 
             <com.dsmishniy.outsetsample.presentation.views.OperationItemView
                 android:id="@+id/fluid_removal_btn"
@@ -94,12 +93,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 app:buttonImageSrc="@drawable/ic_fluid_removal_stop"
-                app:operationName="@string/fluid_rem_btn"
-                app:operationNameColor="@color/colorBlue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/saline_bolus_btn"
-                app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar" />
+                app:layout_constraintTop_toBottomOf="@+id/fluid_remove_progressbar"
+                app:operationName="@string/fluid_rem_btn"
+                app:operationNameColor="@color/colorBlue" />
 
             <com.dsmishniy.outsetsample.presentation.views.ParameterItemView
                 android:id="@+id/saline_status"

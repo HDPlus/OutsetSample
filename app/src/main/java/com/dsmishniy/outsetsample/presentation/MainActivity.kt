@@ -4,21 +4,35 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import com.dsmishniy.outsetsample.R
+import com.dsmishniy.outsetsample.domain.viewmodels.MainActivityViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.main_dashboard.*
 
 
 class MainActivity : AppCompatActivity(), ViewModelStoreOwner {
 
+    private lateinit var model: MainActivityViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //todo add view model call
+        model = ViewModelProvider(
+            this,
+            ViewModelProvider.AndroidViewModelFactory(application)
+        )[MainActivityViewModel::class.java]
+
+        model.getTime()
+        model.time.observe(this, Observer {
+            clock.text = it
+        })
 
         switch_cards_btn.setOnClickListener {
-            if(info_card.isVisible && info_items.isVisible) {
+            if (info_card.isVisible && info_items.isVisible) {
                 info_card.visibility = View.GONE
                 info_items.visibility = View.GONE
                 hidden_cards.visibility = View.VISIBLE
@@ -30,5 +44,18 @@ class MainActivity : AppCompatActivity(), ViewModelStoreOwner {
                 switch_cards_btn.setImageResource(R.drawable.ic_close_cards)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        model.startCountDown(COUNT_DOWN_START_TIME, 1000)
+        model.countDownText.observe(this, Observer {
+            timer.text = it
+        })
+    }
+
+    override fun onDestroy() {
+        model.disableTimer()
+        super.onDestroy()
     }
 }
