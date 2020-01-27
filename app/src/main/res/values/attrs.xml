@@ -18,7 +18,6 @@
         <attr name="parameterItemName" format="string" />
         <attr name="parameterValue" format="string" />
         <attr name="parameterMeasurement" format="string" />
-        <attr name="parameterNameDrawableEnd" format="reference"/>
     </declare-styleable>
     <declare-styleable name="OperationItemView">
         <attr name="buttonImageSrc" format="reference"/>

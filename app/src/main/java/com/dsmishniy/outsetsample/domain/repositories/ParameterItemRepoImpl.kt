@@ -7,7 +7,7 @@ class ParameterItemRepoImpl: ParameterItemRepository {
     override fun getParameterItems(): List<ParameterItem> {
         return listOf(
             ParameterItem("Treatment Type", "HD"),
-            ParameterItem("Dialysate \n Flow Rate", "SmartFlow™", additionalInfo = true),
+            ParameterItem("Dialysate \nFlow Rate", "SmartFlow™", additionalInfo = true),
             ParameterItem("Fluid Removal Goal", "1200", "mL"),
             ParameterItem("Treatment Duration", "6:00", "hours"),
             ParameterItem("Blood Flow Rate", "350", "mL/min"),

@@ -50,6 +50,11 @@ class InfoItemsAdapter : RecyclerView.Adapter<InfoItemsAdapter.InfoItemViewHolde
             parameterName.text = item.parameterName
             parameterValue.text = item.parameterValue
             parameterMeasurement.text = item.measurement
+            if (item.additionalInfo) {
+                parameterName.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_tool_tip, 0)
+            } else {
+                parameterName.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0)
+            }
         }
     }
 }
