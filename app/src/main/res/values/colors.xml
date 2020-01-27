@@ -14,5 +14,6 @@
     <color name="colorBlue">#00A1CD</color>
     <color name="colorLightBLue">#E5F1F0</color>
     <color name="colorDirtBlue">#BFD7CC</color>
+    <color name="colorDarkTransparent">#59443f3f</color>
     <color name="transparent">@android:color/transparent</color>
 </resources>

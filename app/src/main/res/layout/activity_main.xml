@@ -48,20 +48,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_marginTop="50dp"
             android:layout_marginEnd="50dp"
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/top_shadow"
+            tools:text="Sun 9:30am" />
+
+        <View
+            android:id="@+id/top_shadow"
+            android:layout_width="match_parent"
+            android:layout_height="84.dp"
+            android:layout_marginStart="198.dp"
+            android:background="@drawable/top_main_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Sun 9:30am" />
+            tools:layout_height="84dp"
+            tools:layout_marginStart="198dp" />
 
         <include
             layout="@layout/main_dashboard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/clock" />
@@ -74,13 +84,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/stop_treatment_btn_background"
         android:gravity="center"
-        android:text="@string/stop_btn"
-        android:textColor="@color/colorWhite"
-        android:textSize="32sp"
-        android:textAllCaps="false"
         android:orientation="horizontal"
         android:paddingTop="18dp"
-        android:paddingBottom="18dp">
+        android:paddingBottom="18dp"
+        android:text="@string/stop_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:textSize="32sp">
 
     </Button>
 
