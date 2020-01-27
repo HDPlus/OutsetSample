@@ -22,7 +22,7 @@ class MainActivityViewModel : ViewModel() {
 
     fun getTime() {
         timer = fixedRateTimer(period = 1000) {
-            time.postValue(dateRepository.getDate("E HH:mma"))
+            time.postValue(dateRepository.getDate("E h:mma"))
         }
     }
 
