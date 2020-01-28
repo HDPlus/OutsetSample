@@ -21,13 +21,15 @@ class MainActivityViewModel : ViewModel() {
     private val parameterItemRepository: ParameterItemRepository = ParameterItemRepoImpl()
 
     fun getTime() {
-        timer = fixedRateTimer(period = 1000) {
+        val updateTimePeriod = 1000L // 1 second
+        timer = fixedRateTimer(period = updateTimePeriod) {
             time.postValue(dateRepository.getDate("E h:mma"))
         }
     }
 
     fun startCountDown(startTimeInMillis: Long, periodInMillis: Long) {
-        val countDown = object : CountDownTimer(startTimeInMillis + 1000, periodInMillis) {
+        val offsetTime = 1000L // 1 second
+        val countDown = object : CountDownTimer(startTimeInMillis + offsetTime, periodInMillis) {
             override fun onFinish() {
                 countDownText.postValue("00:00")
             }
