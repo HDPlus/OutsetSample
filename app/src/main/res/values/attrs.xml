@@ -20,8 +20,8 @@
         <attr name="parameterMeasurement" format="string" />
     </declare-styleable>
     <declare-styleable name="OperationItemView">
-        <attr name="buttonImageSrc" format="reference"/>
-        <attr name="operationName" format="string"/>
-        <attr name="operationNameColor" format="color"/>
+        <attr name="buttonImageSrc" format="reference" />
+        <attr name="operationName" format="string" />
+        <attr name="operationNameColor" format="color" />
     </declare-styleable>
 </resources>

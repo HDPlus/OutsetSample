@@ -49,7 +49,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/switch_cards_btn"
-                tools:text="6:00"/>
+                tools:text="6:00" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -157,8 +157,8 @@
         android:id="@+id/info_items"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:layout_gravity="fill_vertical"
+        android:layout_weight="1"
         android:visibility="gone"
         tools:visibility="visible" />
 

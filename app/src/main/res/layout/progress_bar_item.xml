@@ -44,9 +44,9 @@
         android:paddingStart="0dp"
         android:paddingEnd="0dp"
         android:progress="600"
-        tools:progressDrawable="@drawable/progress_bar_drawable"
         android:splitTrack="false"
-        android:thumb="@null" />
+        android:thumb="@null"
+        tools:progressDrawable="@drawable/progress_bar_drawable" />
 
     <LinearLayout
         android:id="@+id/bottom_titles"
