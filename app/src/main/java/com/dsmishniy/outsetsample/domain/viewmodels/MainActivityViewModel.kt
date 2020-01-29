@@ -20,7 +20,7 @@ class MainActivityViewModel : ViewModel() {
     private val dateRepository: DateRepository = DateRepositoryImpl()
     private val parameterItemRepository: ParameterItemRepository = ParameterItemRepoImpl()
 
-    fun getTime() {
+    fun startTimeUpdate() {
         val updateTimePeriod = 1000L // 1 second
         timer = fixedRateTimer(period = updateTimePeriod) {
             time.postValue(dateRepository.getDate("E h:mma"))
@@ -28,12 +28,16 @@ class MainActivityViewModel : ViewModel() {
     }
 
     fun startCountDown(startTimeInMillis: Long, periodInMillis: Long) {
-        val offsetTime = 1000L // 1 second
+        val offsetTime = 1000L // 1 second (in some reason, count down timer starts from 5:59,
+                                // so I added additional second on start)
         val countDown = object : CountDownTimer(startTimeInMillis + offsetTime, periodInMillis) {
             override fun onFinish() {
                 countDownText.postValue("00:00")
             }
 
+            /**
+             * Formatting each tick into suitable for displaying form
+             * */
             override fun onTick(millisUntilFinished: Long) {
                 val minutes = millisUntilFinished / 1000 / 60
                 val seconds = millisUntilFinished / 1000 % 60

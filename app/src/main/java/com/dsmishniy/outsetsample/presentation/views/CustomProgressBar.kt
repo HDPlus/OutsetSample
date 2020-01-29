@@ -48,6 +48,10 @@ class CustomProgressBar(context: Context, attrs: AttributeSet) : LinearLayout(co
         return "$maxRange $measurement"
     }
 
+    /**
+     * Actually, SeekBar are using in layout, instead of ProgressBar.
+     * ProgressBar hasn't thumb unlike SeekBar.
+     * */
     private fun barSetup(context: Context) {
         bar.max = getMaxRange()
         bar.progress = getProgress()
@@ -61,12 +65,24 @@ class CustomProgressBar(context: Context, attrs: AttributeSet) : LinearLayout(co
         bar.setOnTouchListener { _, _ -> true }
     }
 
+    /**
+     * Unfortunately, SeekBar doesn't allow set min value for bar if app min sdk version less than 26.
+     * SeekBar has min value = 0, as a default.
+     * So, here I used a little hack. I shifted values from attributes and made them suitable for SeekBar.
+     * Example of range transformation: -30.....20 ---> 0.....50
+     * */
     private fun getMaxRange(): Int {
         val strMaxRange = typedArray.getInteger(R.styleable.CustomProgressBar_maxRange, 0)
         val strMinRange = typedArray.getInteger(R.styleable.CustomProgressBar_minRange, 0)
         return strMaxRange - strMinRange
     }
 
+    /**
+     * So, after range shifting, progress should be changed too.
+     * If min < 0: -30.-25....20 ---> 0.5....50, where 25 - progress, set in layout;  5 - transformed (actual) progress
+     * If min > 0: 10..20..30 ---> 0..10..20
+     * If min = 0 - no changes
+     * */
     private fun getProgress(): Int {
         val strProgress = typedArray.getInteger(R.styleable.CustomProgressBar_progress, 0)
         val strMinRange = typedArray.getInteger(R.styleable.CustomProgressBar_minRange, 0)

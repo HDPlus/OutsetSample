@@ -11,6 +11,7 @@ import com.dsmishniy.outsetsample.data.entities.ParameterItem
 class InfoItemsAdapter : RecyclerView.Adapter<InfoItemsAdapter.InfoItemViewHolder>() {
 
     private val items = mutableListOf<ParameterItem>()
+    // Clicked item position holder
     private var tappedItem = -1
 
     fun addItems(items: List<ParameterItem>) {
@@ -28,11 +29,14 @@ class InfoItemsAdapter : RecyclerView.Adapter<InfoItemsAdapter.InfoItemViewHolde
     override fun onBindViewHolder(holder: InfoItemViewHolder, position: Int) {
         holder.bind(items[position])
         holder.itemView.setOnClickListener {
+            // Change values of tappedItem and update whole items in list
             tappedItem = position
             notifyDataSetChanged()
         }
 
         val context = holder.itemView.context
+        // Check if item was clicked. If it was, change it background according to design.
+        // If not - set back default white color.
         if (position == tappedItem) {
             holder.itemView.setBackgroundColor(context.resources.getColor(R.color.colorDirtBlue))
         } else {
@@ -50,6 +54,7 @@ class InfoItemsAdapter : RecyclerView.Adapter<InfoItemsAdapter.InfoItemViewHolde
             parameterName.text = item.parameterName
             parameterValue.text = item.parameterValue
             parameterMeasurement.text = item.measurement
+            // Add ic_tool_tip image to parameter name text view, if some additional information is present
             if (item.additionalInfo) {
                 parameterName.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.ic_tool_tip, 0)
             } else {

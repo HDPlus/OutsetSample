@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), ViewModelStoreOwner {
     }
 
     private fun getTime() {
-        model.getTime()
+        model.startTimeUpdate()
         model.time.observe(this, Observer {
             clock.text = it
         })
